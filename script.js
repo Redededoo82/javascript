@@ -112,24 +112,26 @@
 
 //store mark and johns mass and height in variables//
 
-markHeight =2;
+markHeight =6;
 markMass =70;
 johnHeight =6;
 johnMass =100;
 
 //calculate both their BMI's//
 
-var markBmi = 'Mark bmi ' + markMass / (markHeight * markHeight);
-var johnBmi = 'John bmi ' + johnMass / (johnHeight * johnHeight);
+var markBmi =  markMass / (markHeight * markHeight);
+var johnBmi =  johnMass / (johnHeight * johnHeight);
 console.log(markBmi, johnBmi);
 
 //create a boolean variable containing information about wether mark has a higher BMI than John.//
 
-var isMarksBmiHigher = markBmi > johnBmi;
+if( markBmi > johnBmi){
+    console.log('marks bmi is higher than johns')
+}else{console.log('johns is higher')};
 
 //print a string to the console containing the variable from step 3.//
 
-console.log('it is ' + isMarksBmiHigher + ' that Mark has a higher bmi');
+
 
 
 /*******************************************************************************************************************************/
@@ -149,3 +151,15 @@ if(isMarried){
 }else(console.log('its not worth it'))
 
 /******************************************************************************************************************************8 */
+
+//boolean logic//
+
+
+var age = 57;
+
+if(age <= 13){
+    console.log(firstName + ' is a boy');
+}else if(age  > 13 && age < 20){
+    console.log(firstName + ' is a teenager');
+}else{console.log(firstName + ' is a man')};
+
