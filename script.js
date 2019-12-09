@@ -105,3 +105,28 @@ console.log(x);
 
 x++;
 console.log(x);
+
+/****************************************************************************************************/
+
+/*/coding challenge/*/
+
+//store mark and johns mass and height in variables//
+
+markHeight =2;
+markMass =70;
+johnHeight =6;
+johnMass =100;
+
+//calculate both their BMI's//
+
+var markBmi = 'Mark bmi ' + markMass / (markHeight * markHeight);
+var johnBmi = 'John bmi ' + johnMass / (johnHeight * johnHeight);
+console.log(markBmi, johnBmi);
+
+//create a boolean variable containing information about wether mark has a higher BMI than John.//
+
+var isMarksBmiHigher = markBmi > johnBmi;
+
+//print a string to the console containing the variable from step 3.//
+
+console.log('it is ' + isMarksBmiHigher + ' that Mark has a higher bmi');
