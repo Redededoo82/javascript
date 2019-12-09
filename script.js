@@ -28,19 +28,47 @@
 //variable mutation and type coercion//
 
 //coercion//
-var firstName = 'aaron';
-var age = 37;
-console.log(firstName + ' ' + age);
+// var firstName = 'aaron';
+// var age = 37;
+// console.log(firstName + ' ' + age);
 
-var job, isMarried;
-job = 'head shop guy';
-isMarried = false;
-console.log(firstName + ' is a ' + age + ' year old ' + job +'. Is he married? ' + isMarried)
+// var job, isMarried;
+// job = 'head shop guy';
+// isMarried = false;
+// console.log(firstName + ' is a ' + age + ' year old ' + job +'. Is he married? ' + isMarried)
 
-//mutation//
-age = 'thirty seven';
-job = 'head shop operator';
-alert(firstName + ' is a ' + age + ' year old ' + job +'. Is he married? ' + isMarried)
+// //mutation//
+// age = 'thirty seven';
+// job = 'head shop operator';
+// alert(firstName + ' is a ' + age + ' year old ' + job +'. Is he married? ' + isMarried)
 
-var lastName = prompt('what is his last name?');
-console.log(firstName + ' ' + lastName);
+// var lastName = prompt('what is his last name?');
+// console.log(firstName + ' ' + lastName);
+
+/*********************************************************************************************/
+
+//basic operators//
+var currentYear, aaronsBirthYear, russellsBirthYear;
+currentYear = 2019;
+ageAaron = 37;
+ageRussell = 39;
+var x;
+
+aaronsBirthYear = currentYear - ageAaron;
+russellsBirthYear = currentYear - ageRussell;
+
+console.log(aaronsBirthYear);
+console.log(russellsBirthYear);
+console.log(currentYear + 2);
+console.log(currentYear - 2);
+console.log(currentYear * 2);
+
+//logical operators//
+var aaronOlder = ageAaron > ageRussell;
+console.log(aaronOlder);
+
+//type of operator//
+console.log(typeof aaronOlder);
+console.log(typeof ageRussell);
+console.log(typeof x);
+console.log(typeof "aaron is younger than russell");
