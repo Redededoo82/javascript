@@ -77,34 +77,34 @@
 
 //operator precedence//
 
-var now = 2019;
-var yearAaron = 1982;
-var adultAge = 18;
+// var now = 2019;
+// var yearAaron = 1982;
+// var adultAge = 18;
 
-var isAdultAge = now - yearAaron >= adultAge;
-// console.log(isAdultAge);
+// var isAdultAge = now - yearAaron >= adultAge;
+// // console.log(isAdultAge);
 
-var ageAaron = now - yearAaron;
-var ageRussell = 39;
-var average = (ageAaron + ageRussell) / 2;
-// console.log(average);
+// var ageAaron = now - yearAaron;
+// var ageRussell = 39;
+// var average = (ageAaron + ageRussell) / 2;
+// // console.log(average);
 
-var x, y;
-x = y = (3+5) * 4 - 6;
-console.log(x, y);
+// var x, y;
+// x = y = (3+5) * 4 - 6;
+// console.log(x, y);
 
-//more operators//
+// //more operators//
 
-// x = x * 2; 
-x*=2;
+// // x = x * 2; 
+// x*=2;
 
-console.log(x);
+// console.log(x);
 
-x+=10;
-console.log(x);
+// x+=10;
+// console.log(x);
 
-x++;
-console.log(x);
+// x++;
+// console.log(x);
 
 /****************************************************************************************************/
 
@@ -130,3 +130,22 @@ var isMarksBmiHigher = markBmi > johnBmi;
 //print a string to the console containing the variable from step 3.//
 
 console.log('it is ' + isMarksBmiHigher + ' that Mark has a higher bmi');
+
+
+/*******************************************************************************************************************************/
+
+//if else statements//
+
+var firstName = 'aaron';
+var civilStatus = 'horribly divorced again';
+
+if (civilStatus === 'married'){
+    console.log(firstName + ' is married');
+}else(console.log(firstName + ' is not married'));
+
+var isMarried = false;
+if(isMarried){
+    console.log('congrats');
+}else(console.log('its not worth it'))
+
+/******************************************************************************************************************************8 */
