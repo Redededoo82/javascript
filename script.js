@@ -112,22 +112,22 @@
 
 //store mark and johns mass and height in variables//
 
-markHeight =6;
-markMass =70;
-johnHeight =6;
-johnMass =100;
+// markHeight =6;
+// markMass =70;
+// johnHeight =6;
+// johnMass =100;
 
-//calculate both their BMI's//
+// //calculate both their BMI's//
 
-var markBmi =  markMass / (markHeight * markHeight);
-var johnBmi =  johnMass / (johnHeight * johnHeight);
-console.log(markBmi, johnBmi);
+// var markBmi =  markMass / (markHeight * markHeight);
+// var johnBmi =  johnMass / (johnHeight * johnHeight);
+// console.log(markBmi, johnBmi);
 
-//create a boolean variable containing information about wether mark has a higher BMI than John.//
+// //create a boolean variable containing information about wether mark has a higher BMI than John.//
 
-if( markBmi > johnBmi){
-    console.log('marks bmi is higher than johns')
-}else{console.log('johns is higher')};
+// if( markBmi > johnBmi){
+//     console.log('marks bmi is higher than johns')
+// }else{console.log('johns is higher')};
 
 //print a string to the console containing the variable from step 3.//
 
@@ -138,28 +138,68 @@ if( markBmi > johnBmi){
 
 //if else statements//
 
-var firstName = 'aaron';
-var civilStatus = 'horribly divorced again';
+// var firstName = 'aaron';
+// var civilStatus = 'horribly divorced again';
 
-if (civilStatus === 'married'){
-    console.log(firstName + ' is married');
-}else(console.log(firstName + ' is not married'));
+// if (civilStatus === 'married'){
+//     console.log(firstName + ' is married');
+// }else(console.log(firstName + ' is not married'));
 
-var isMarried = false;
-if(isMarried){
-    console.log('congrats');
-}else(console.log('its not worth it'))
+// var isMarried = false;
+// if(isMarried){
+//     console.log('congrats');
+// }else(console.log('its not worth it'))
 
 /******************************************************************************************************************************8 */
 
 //boolean logic//
 
 
-var age = 57;
+// var age = 57;
 
-if(age <= 13){
-    console.log(firstName + ' is a boy');
-}else if(age  > 13 && age < 20){
-    console.log(firstName + ' is a teenager');
-}else{console.log(firstName + ' is a man')};
+// if(age <= 13){
+//     console.log(firstName + ' is a boy');
+// }else if(age  > 13 && age < 20){
+//     console.log(firstName + ' is a teenager');
+// }else{console.log(firstName + ' is a man')};
 
+// console.log({} + []);
+
+/****************************************************************************************************************************************/
+
+//ternary operator and switch statements//
+
+var firstName = 'aaron';
+var age = 37;
+
+age >= 21 ? console.log(firstName + ' drinks beer') : console.log(firstName + ' drinks juice');
+
+var drink = age>=21 ? 'beer' : 'juice';
+console.log(drink);
+
+//switch statement//
+
+var job = 'tranny';
+switch(job){
+    case 'head shop operator': console.log(firstName + ' sells bongs');
+    break;
+    case 'web developer': console.log(firstName +' develops websites');
+    break;
+    case 'tranny': console.log(firstName +' is a tranny')
+    break;
+    default: console.log('does nothing');
+}
+
+/**************************************************************************************************************************************/
+
+//truthy falsy values and equality operators//
+//falsy values :  undefined, null, 0, '', NaN
+//truthy values : all non falsy values
+
+var height;
+height = 55;
+if (height){
+    console.log('variable is defined')
+}else{
+    console.log('variable is not defined')
+}
