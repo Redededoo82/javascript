@@ -48,27 +48,60 @@
 /*********************************************************************************************/
 
 //basic operators//
-var currentYear, aaronsBirthYear, russellsBirthYear;
-currentYear = 2019;
-ageAaron = 37;
-ageRussell = 39;
-var x;
+// var currentYear, aaronsBirthYear, russellsBirthYear;
+// currentYear = 2019;
+// ageAaron = 37;
+// ageRussell = 39;
+// var x;
 
-aaronsBirthYear = currentYear - ageAaron;
-russellsBirthYear = currentYear - ageRussell;
+// aaronsBirthYear = currentYear - ageAaron;
+// russellsBirthYear = currentYear - ageRussell;
 
-console.log(aaronsBirthYear);
-console.log(russellsBirthYear);
-console.log(currentYear + 2);
-console.log(currentYear - 2);
-console.log(currentYear * 2);
+// console.log(aaronsBirthYear);
+// console.log(russellsBirthYear);
+// console.log(currentYear + 2);
+// console.log(currentYear - 2);
+// console.log(currentYear * 2);
 
-//logical operators//
-var aaronOlder = ageAaron > ageRussell;
-console.log(aaronOlder);
+// //logical operators//
+// var aaronOlder = ageAaron > ageRussell;
+// console.log(aaronOlder);
 
-//type of operator//
-console.log(typeof aaronOlder);
-console.log(typeof ageRussell);
-console.log(typeof x);
-console.log(typeof "aaron is younger than russell");
+// //type of operator//
+// console.log(typeof aaronOlder);
+// console.log(typeof ageRussell);
+// console.log(typeof x);
+// console.log(typeof "aaron is younger than russell");
+
+/****************************************************************************************/
+
+//operator precedence//
+
+var now = 2019;
+var yearAaron = 1982;
+var adultAge = 18;
+
+var isAdultAge = now - yearAaron >= adultAge;
+// console.log(isAdultAge);
+
+var ageAaron = now - yearAaron;
+var ageRussell = 39;
+var average = (ageAaron + ageRussell) / 2;
+// console.log(average);
+
+var x, y;
+x = y = (3+5) * 4 - 6;
+console.log(x, y);
+
+//more operators//
+
+// x = x * 2; 
+x*=2;
+
+console.log(x);
+
+x+=10;
+console.log(x);
+
+x++;
+console.log(x);
