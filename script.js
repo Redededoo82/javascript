@@ -424,29 +424,84 @@ function names() {
 /************************************************************************************************************** */
 
 //hoisting//
-calculateAge(1982);
+// calculateAge(1982);
 
-function calculateAge(year) {
-    console.log(2019 - year)
-};
-
-// retirement(1982);
-// var retirement = function (year) {
-//     console.log(65-(2019-year))
+// function calculateAge(year) {
+//     console.log(2019 - year)
 // };
 
-console.log(age);               ///undefined
-var age = 23;
+// // retirement(1982);
+// // var retirement = function (year) {
+// //     console.log(65-(2019-year))
+// // };
 
-function foo() {
-    var age = 65
-    console.log(age)                ///65
-};
+// console.log(age);               ///undefined
+// var age = 23;
 
-foo();
-console.log(age)                    ///23
+// function foo() {
+//     var age = 65
+//     console.log(age)                ///65
+// };
+
+// foo();
+// console.log(age)                    ///23
 
 /*********************************************************************************************************************** */
 
 //scoping chain//
 
+var a = 'hello';
+first();
+
+function first() {
+    var b = 'sup';
+    second();
+
+    function second() {
+        var c = 'sah brah!';
+        // console.log(a + b + c);
+        // third();
+    }
+}
+
+function third() {
+    var d = 'hog';
+    console.log(a + d);
+}
+
+/**************************************************************************************************************************** */
+
+//this keyword//
+
+// console.log(this);
+// calculateAge(1982)
+
+// function calculateAge(year) {
+//     console.log(2019 - year);
+//     console.log(this);
+// }
+
+var aaron = {
+    name: 'aaron',
+    yearOfBirth: 1982,
+    calculateAge: function () {
+        console.log(this);
+        console.log(2019 - this.yearOfBirth);
+
+        // function innerFunction() {
+        //     console.log(this);
+        // }
+        // innerFunction();
+    }
+}
+
+aaron.calculateAge();
+
+var faggot = {
+    name: 'mike',
+    yearOfBirth: 2000,
+
+};
+
+faggot.calculateAge = aaron.calculateAge;
+faggot.calculateAge();
