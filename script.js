@@ -420,3 +420,33 @@ function names() {
         console.log(names[i]);
     }
 }
+
+/************************************************************************************************************** */
+
+//hoisting//
+calculateAge(1982);
+
+function calculateAge(year) {
+    console.log(2019 - year)
+};
+
+// retirement(1982);
+// var retirement = function (year) {
+//     console.log(65-(2019-year))
+// };
+
+console.log(age);               ///undefined
+var age = 23;
+
+function foo() {
+    var age = 65
+    console.log(age)                ///65
+};
+
+foo();
+console.log(age)                    ///23
+
+/*********************************************************************************************************************** */
+
+//scoping chain//
+
