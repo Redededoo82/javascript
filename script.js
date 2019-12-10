@@ -268,11 +268,11 @@
 
 function calculateTip(billAmount) {
     var percentage;
-    if (billAmount < 50){
+    if (billAmount < 50) {
         percentage = .2;
-    }else if(billAmount >= 50 && billAmount < 200){
-        percentage =.15;
-    }else{
+    } else if (billAmount >= 50 && billAmount < 200) {
+        percentage = .15;
+    } else {
         percentage = .1;
     };
     return percentage * billAmount;
@@ -294,7 +294,7 @@ var finalValues = [
 ]
 // console.log(tips, finalValues);
 function displayInfo() {
-    console.log(bills, tips, finalValues) ;
+    console.log(bills, tips, finalValues);
 }
 /******************************************************************************************************************* */
 
@@ -327,20 +327,20 @@ function displayInfo() {
 //objects and methods//
 
 var aaron = {
-    firstName:'aaron',
+    firstName: 'aaron',
     lastName: 'marcks',
-    birthYear: 1989,
-    family:['russell', 'keith', 'scott'],
+    birthYear: 1982,
+    family: ['russell', 'keith', 'scott'],
     job: 'head shop operator',
     isMarried: false,
-    calcAge: function(){
+    calcAge: function () {
         return this.age = 2019 - this.birthYear;
     }
 };
 
 function ageOfAaron() {
     console.log(aaron.calcAge());
-    
+
 }
 
 /*******************************************************************************************************************88 */
@@ -367,17 +367,56 @@ var john = {
     }
 }
 //console log who has the highest bmi
-console.log(mark.calcBmi(), john.calcBmi());
+// console.log(mark.calcBmi(), john.calcBmi());
+function Bmi() {
 
-if(mark.calcBmi() > john.calcBmi()){
-    console.log('marks bmi is higher with...' + mark.calcBmi() + ' john had ' + john.calcBmi())
-}else{
-    console.log('johns bmi is higher with...' + john.calcBmi() + ' mark had ' + mark.calcBmi())
-};
-
-
-
-
+    if (mark.calcBmi() > john.calcBmi()) {
+        console.log('marks bmi is higher with...' + mark.calcBmi() + ' john had ' + john.calcBmi())
+    } else {
+        console.log('johns bmi is higher with...' + john.calcBmi() + ' mark had ' + mark.calcBmi())
+    };
+}
 
 
+/***************************************************************************************************************************************88 */
 
+//loops and iteration//
+
+// for(var i = 1; i <= 20; i ++){
+//     console.log(i);
+// }
+
+// var names = ['aaron', 'russell', 'keith', 'scott'];
+
+// for(var i = 0; i < names.length; i++){
+//     console.log(names[i]);
+// }
+
+
+// i = 0;
+// while(i < names.length){
+//     console.log(names[i]);
+//     i++;
+// }
+
+//continue and break statements//
+
+
+// for(var i = 0; i < names.length; i++){
+//     if (typeof names[i] !== 'string') continue;
+//     console.log(names[i]);
+// }
+// for(var i = 0; i < names.length; i++){
+//     if (typeof names[i] !== 'string') break;
+//     console.log(names[i]);
+// }
+
+//how to loop through names array backwards??//
+function names() {
+    var names = ['aaron', 'russell', 'keith', 420, 'scott'];
+
+    for (var i = names.length - 1; i >= 0; i--) {
+
+        console.log(names[i]);
+    }
+}
