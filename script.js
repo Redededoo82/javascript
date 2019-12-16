@@ -579,6 +579,8 @@ function primVsObj() {
 };
 
 //passing functions as arguments//
+
+
 function activateCalculation(params) {
     var years = [3948, 1102, 1992, 1984, 2019];
 
@@ -618,3 +620,37 @@ function activateCalculation(params) {
     console.log(ages);
     console.log(heartRates);
 };
+
+//functions returning functions//
+
+function interviewQuestion(job) {
+    if (job === 'developer') {
+        return function (name) {
+            console.log(name + ', can you please explain the difference between the double and tripple equals operater?')
+        }
+    } else if (job === 'teacher') {
+        return function (name) {
+            console.log('What subjects do you teach,' + name + '?')
+        }
+    } else {
+        return function (name) {
+            console.log('Hello' + name + 'What do you do?')
+        }
+    }
+}
+
+function activateQuestions() {
+    var developerQuestion = interviewQuestion('developer');
+
+    developerQuestion('aaron');
+
+    var teacherQuestion = interviewQuestion('teacher');
+
+    teacherQuestion('Dr. Stupid');
+
+    var otherQuestion = interviewQuestion('');
+
+    otherQuestion(' my dude! ');
+}
+
+
