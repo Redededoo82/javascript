@@ -670,3 +670,71 @@ game();
 (function () {
     console.log('hello')
 })();
+
+//Closures//
+
+function retirement(retirementAge) {
+    var a = 'years left until retirement';
+    return function (yearOfBirth) {
+        var age = 2016 - yearOfBirth;
+        console.log((retirementAge - age) + a);
+    }
+}
+var retirementUS = retirement(66);
+retirementUS(1982);
+var retirementGermany = retirement(65);
+retirementGermany(1982)
+
+//closure challenge//
+
+
+// function interviewQuestion(job) {
+//     if (job === 'developer') {
+//         return function (name) {
+//             console.log(name + ', can you please explain the difference between the double and tripple equals operater?')
+//         }
+//     } else if (job === 'teacher') {
+//         return function (name) {
+//             console.log('What subjects do you teach, ' + name + '?')
+//         }
+//     } else {
+//         return function (name) {
+//             console.log('Hello ' + name + ' What do you do?')
+//         }
+//     }
+// }
+
+//modify the commented code to use closure//
+
+function interviewQuestion2(job) {
+    return function (name) {
+        if (job === 'developer') {
+
+            console.log(name + ', can you please explain the difference between the double and tripple equals operater?')
+
+        } else if (job === 'teacher') {
+
+            console.log('What subjects do you teach, ' + name + '?')
+
+        } else {
+
+            console.log('Hello ' + name + ' What do you do?')
+
+        }
+    }
+}
+interviewQuestion2('teacher')('aaron');
+interviewQuestion2('developer')('aaron');
+
+/////bind call and apply////
+
+var john = {
+    name: 'john',
+    age: 45,
+    job: "cat strangler",
+    presentation: function (style, timeOfDay) {
+        if(style === 'formal'){
+            console.log('good' + timeOfDay + 'Ladies and gentlemen. I am a cat strangler')
+        }
+    }
+}
