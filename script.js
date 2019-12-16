@@ -481,27 +481,60 @@ function third() {
 //     console.log(this);
 // }
 
-var aaron = {
-    name: 'aaron',
-    yearOfBirth: 1982,
-    calculateAge: function () {
-        console.log(this);
-        console.log(2019 - this.yearOfBirth);
+// var aaron = {
+//     name: 'aaron',
+//     yearOfBirth: 1982,
+//     calculateAge: function () {
+//         console.log(this);
+//         console.log(2019 - this.yearOfBirth);
 
-        // function innerFunction() {
-        //     console.log(this);
-        // }
-        // innerFunction();
-    }
-}
+//         // function innerFunction() {
+//         //     console.log(this);
+//         // }
+//         // innerFunction();
+//     }
+// }
 
-aaron.calculateAge();
 
-var faggot = {
-    name: 'mike',
-    yearOfBirth: 2000,
 
+/********************************************************************************************************************************************* */
+                                                            //Advanced Java Script//
+/********************************************************************************************************************************************** */
+
+//function constructors//
+
+
+var Person = function (name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job
 };
 
-faggot.calculateAge = aaron.calculateAge;
-faggot.calculateAge();
+Person.prototype.calcAge =  function () {
+    console.log( 2019 - this.yearOfBirth);
+};
+Person.prototype.jobIs = function () {
+    console.log(this.job);
+};
+Person.prototype.lastName = 'McKringleberry'
+
+var aaron = new Person('aaron', 1982, 'head shop operator');
+var ninny = new Person('ninny', 2001, 'silly head');
+var jimmy = new Person('jimmy', 2002, 'silly head2');
+var snookie = new Person('snookie', 2003, 'silly head3');
+
+aaron.calcAge();
+ninny.calcAge();
+jimmy.calcAge();
+snookie.calcAge();
+
+aaron.jobIs();
+ninny.jobIs();
+jimmy.jobIs();
+snookie.jobIs();
+
+console.log(aaron.lastName)
+console.log(ninny.lastName)
+console.log(jimmy.lastName)
+console.log(snookie.lastName)
+
