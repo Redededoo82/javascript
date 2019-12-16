@@ -630,11 +630,11 @@ function interviewQuestion(job) {
         }
     } else if (job === 'teacher') {
         return function (name) {
-            console.log('What subjects do you teach,' + name + '?')
+            console.log('What subjects do you teach, ' + name + '?')
         }
     } else {
         return function (name) {
-            console.log('Hello' + name + 'What do you do?')
+            console.log('Hello ' + name + ' What do you do?')
         }
     }
 }
@@ -654,3 +654,19 @@ function activateQuestions() {
 }
 
 
+//IIFE/////instantly invoked function expressions//
+
+function game() {
+    var score = Math.random() * 20;
+    console.log(score >= 5);
+}
+game();
+
+(function () {
+    var score = Math.random() * 100;
+    console.log(score >= 5);
+})();
+
+(function () {
+    console.log('hello')
+})();
