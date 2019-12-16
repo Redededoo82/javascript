@@ -498,7 +498,7 @@ function third() {
 
 
 /********************************************************************************************************************************************* */
-                                                            //Advanced Java Script//
+//Advanced Java Script//
 /********************************************************************************************************************************************** */
 
 //function constructors//
@@ -528,7 +528,7 @@ function third() {
 
 var personProto = {
     calcAge: function () {
-        console.log( 2019 - this.yearOfBirth);
+        console.log(2019 - this.yearOfBirth);
 
     }
 };
@@ -539,7 +539,41 @@ aaron.yearOfBirth = 1982;
 aaron.job = 'head shop operator';
 
 var Jane = Object.create(personProto, {
-    name: {value: 'jane'},
-    yearOfBirth: {value: 1988},
-    job: {value: 'nothing'}
+    name: { value: 'jane' },
+    yearOfBirth: { value: 1988 },
+    job: { value: 'nothing' }
 });
+
+
+//primitives vs objects//
+
+
+function primVsObj(params) {
+    var a = 23;
+    var b = a;
+    a = 55;
+
+    console.log(a, b);
+
+    var obj1 = { name: 'jon', age: 26 };
+    var obj2 = obj1;
+    obj1.age = 66;
+
+    console.log(obj1.age, obj2.age);
+
+
+
+//passing in a primitive data type as a paramater of a function to mutate data//
+
+    var age = 27;
+    var obj = { name: 'aaron', city: 'Austin' };
+
+
+    function change(a, b) {
+        a = 30;
+        b.city = 'Ft.Worth';
+
+    }
+    change(age, obj);
+    console.log(age, obj.city);
+}
