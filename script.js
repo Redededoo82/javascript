@@ -504,37 +504,42 @@ function third() {
 //function constructors//
 
 
-var Person = function (name, yearOfBirth, job) {
-    this.name = name;
-    this.yearOfBirth = yearOfBirth;
-    this.job = job
+// var Person = function (name, yearOfBirth, job) {
+//     this.name = name;
+//     this.yearOfBirth = yearOfBirth;
+//     this.job = job
+// };
+
+// Person.prototype.calcAge =  function () {
+//     console.log( 2019 - this.yearOfBirth);
+// };
+// Person.prototype.jobIs = function () {
+//     console.log(this.job + " good luck!");
+// };
+// Person.prototype.lastName = 'McKringleberry'
+
+// var aaron = new Person('aaron', 1982, 'head shop operator');
+// var ninny = new Person('ninny', 2001, 'silly head');
+// var jimmy = new Person('jimmy', 2002, 'silly head2');
+// var snookie = new Person('snookie', 2003, 'silly head3');
+
+
+//Object.create//
+
+var personProto = {
+    calcAge: function () {
+        console.log( 2019 - this.yearOfBirth);
+
+    }
 };
 
-Person.prototype.calcAge =  function () {
-    console.log( 2019 - this.yearOfBirth);
-};
-Person.prototype.jobIs = function () {
-    console.log(this.job);
-};
-Person.prototype.lastName = 'McKringleberry'
+var aaron = Object.create(personProto);
+aaron.name = 'aaron';
+aaron.yearOfBirth = 1982;
+aaron.job = 'head shop operator';
 
-var aaron = new Person('aaron', 1982, 'head shop operator');
-var ninny = new Person('ninny', 2001, 'silly head');
-var jimmy = new Person('jimmy', 2002, 'silly head2');
-var snookie = new Person('snookie', 2003, 'silly head3');
-
-aaron.calcAge();
-ninny.calcAge();
-jimmy.calcAge();
-snookie.calcAge();
-
-aaron.jobIs();
-ninny.jobIs();
-jimmy.jobIs();
-snookie.jobIs();
-
-console.log(aaron.lastName)
-console.log(ninny.lastName)
-console.log(jimmy.lastName)
-console.log(snookie.lastName)
-
+var Jane = Object.create(personProto, {
+    name: {value: 'jane'},
+    yearOfBirth: {value: 1988},
+    job: {value: 'nothing'}
+});
