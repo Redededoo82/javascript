@@ -548,7 +548,7 @@ var Jane = Object.create(personProto, {
 //primitives vs objects//
 
 
-function primVsObj(params) {
+function primVsObj() {
     var a = 23;
     var b = a;
     a = 55;
@@ -563,7 +563,7 @@ function primVsObj(params) {
 
 
 
-//passing in a primitive data type as a paramater of a function to mutate data//
+    //passing in a primitive data type as a paramater of a function to mutate data//
 
     var age = 27;
     var obj = { name: 'aaron', city: 'Austin' };
@@ -576,4 +576,45 @@ function primVsObj(params) {
     }
     change(age, obj);
     console.log(age, obj.city);
-}
+};
+
+//passing functions as arguments//
+function activateCalculation(params) {
+    var years = [3948, 1102, 1992, 1984, 2019];
+
+    function arrayCalc(arr, fn) {
+        var arrRes = [];
+        for (var i = 0; i < arr.length; i++) {
+            arrRes.push(fn(arr[i]));
+
+        }
+        return arrRes;
+    }
+
+    function calculateAge(el) {
+        return 2019 - el;
+    };
+
+
+    function isFullAge(el) {
+        return el >= 18;
+    }
+
+    function maxHeartRate(el) {
+        if (el >= 18 && el <= 81) {
+            return Math.round(206.9 - (0.67 * el));
+        } else {
+            return -1;
+        }
+    }
+
+
+    var ages = arrayCalc(years, calculateAge);
+    var fullAges = arrayCalc(ages, isFullAge);
+    var heartRates = arrayCalc(ages, maxHeartRate);
+
+
+    console.log(fullAges);
+    console.log(ages);
+    console.log(heartRates);
+};
