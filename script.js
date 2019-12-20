@@ -581,7 +581,7 @@ function primVsObj() {
 //passing functions as arguments//
 
 
-function activateCalculation(params) {
+function activateCalculation() {
     var years = [3948, 1102, 1992, 1984, 2019];
 
     function arrayCalc(arr, fn) {
@@ -655,21 +655,23 @@ function activateQuestions() {
 
 
 //IIFE/////instantly invoked function expressions//
+function iife() {
+    function game() {
+        var score = Math.random() * 20;
+        console.log(score >= 5);
+    }
+    game();
 
-function game() {
-    var score = Math.random() * 20;
-    console.log(score >= 5);
+    (function () {
+        var score = Math.random() * 100;
+        console.log(score >= 5);
+    })();
+
+    (function () {
+        console.log('hello')
+    })();
 }
-game();
 
-(function () {
-    var score = Math.random() * 100;
-    console.log(score >= 5);
-})();
-
-(function () {
-    console.log('hello')
-})();
 
 //Closures//
 
@@ -680,10 +682,14 @@ function retirement(retirementAge) {
         console.log((retirementAge - age) + a);
     }
 }
-var retirementUS = retirement(66);
-retirementUS(1982);
-var retirementGermany = retirement(65);
-retirementGermany(1982)
+
+function activateRetirement() {
+    var retirementUS = retirement(66);
+    retirementUS(1982);
+    var retirementGermany = retirement(65);
+    retirementGermany(1982)
+
+}
 
 //closure challenge//
 
@@ -723,18 +729,70 @@ function interviewQuestion2(job) {
         }
     }
 }
-interviewQuestion2('teacher')('aaron');
-interviewQuestion2('developer')('aaron');
+
+function interview2() {
+    interviewQuestion2('teacher')('aaron');
+    interviewQuestion2('developer')('aaron');
+}
+
 
 /////bind call and apply////
 
-var john = {
-    name: 'john',
-    age: 45,
-    job: "cat strangler",
-    presentation: function (style, timeOfDay) {
-        if(style === 'formal'){
-            console.log('good' + timeOfDay + 'Ladies and gentlemen. I am a cat strangler')
+
+
+function greetings() {
+    var john = {
+        name: 'john',
+        age: 45,
+        job: "cat strangler",
+        presentation: function (style, timeOfDay) {
+            if (style === 'formal') {
+                console.log('good' + timeOfDay + 'Ladies and gentlemen. My name is' + this.name + 'and I am a' + this.job)
+            } else if (style === 'friendly') {
+                console.log('hey whats up? I\'m' + this.name + 'and I am a' + this.job)
+            }
         }
+    };
+
+    var emily = {
+        name: 'Emily',
+        age: '35',
+        job: 'designer'
+    };
+
+
+    john.presentation('formal', 'morning');
+
+    john.presentation.call(emily, 'friendly', 'afternoon');
+
+    john.presentation.call(emily, 'formal', 'evening');
+
+    var johnFriendly = john.presentation.bind(john, 'friendly');
+
+    johnFriendly('morning');
+};
+
+
+var years = [3948, 1102, 1992, 1984, 2019];
+
+    function arrayCalc(arr, fn) {
+        var arrRes = [];
+        for (var i = 0; i < arr.length; i++) {
+            arrRes.push(fn(arr[i]));
+
+        }
+        return arrRes;
     }
-}
+
+    function calculateAge(el) {
+        return 2019 - el;
+    };
+
+
+    function isFullAge(limit, el) {
+        return el >= limit;
+    }
+
+    var ages = arrayCalc(years, calculateAge);
+    var fullJapan = arrayCalc(ages, isFullAge.bind(this, 20))
+    console.log(fullJapan, ages);
